@@ -1,0 +1,8 @@
+{
+    "TOKEN": "MASUKKAN_TOKEN_BOT_DI_SINI",
+    "AUTHORIZED_CHAT_ID": 123456789,
+    "SSH_HOST": "localhost",
+    "SSH_PORT": 22,
+    "SSH_USER": "root",
+    "SSH_PASSWORD": "password_stb_anda"
+}

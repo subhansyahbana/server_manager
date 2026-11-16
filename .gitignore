@@ -1,0 +1,15 @@
+# Byte-compiled / cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# User generated commands & dynamic databases
+custom_commands.json
+
+# Local environments & backups
+.env
+venv/
+env/
+*.bak
+*.tmp
+*.log
