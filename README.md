@@ -40,8 +40,29 @@ Pasang pustaka Python yang dibutuhkan:
 pip3 install -r requirements.txt
 ```
 
-### 3. Pengaturan Konfigurasi
-Buka file `config.json` (atau salin dari `config.example.json`):
+### 3. Menjalankan Bot & Pengaturan Konfigurasi
+
+Anda dapat mengatur konfigurasi dengan dua cara:
+
+#### Metode A: Panduan Otomatis dari Terminal (Paling Mudah)
+Cukup langsung jalankan bot di terminal:
+```bash
+python3 main.py
+```
+Jika file `config.json` belum ada atau belum diisi, bot akan **secara otomatis membuka wizard interaktif di terminal**:
+1. Masukkan Token bot Telegram Anda.
+2. Masukkan Telegram Chat ID Anda.
+3. Masukkan Host SSH (cukup tekan `Enter` untuk default: `localhost`).
+4. Masukkan Port SSH (cukup tekan `Enter` untuk default: `22`).
+5. Masukkan Username SSH (cukup tekan `Enter` untuk default: `root`).
+6. Masukkan Password SSH server/STB Anda.
+
+File `config.json` akan otomatis dibuat dan disimpan, lalu bot langsung aktif! Untuk menjalankan di waktu berikutnya, bot akan langsung membaca `config.json` tanpa menanyakan ulang.
+
+---
+
+#### Metode B: Pengaturan Manual (Opsional)
+Jika ingin membuat/mengedit file konfigurasi sendiri terlebih dahulu, buat atau edit file `config.json` (bisa mencontoh `config.example.json`):
 ```json
 {
     "TOKEN": "MASUKKAN_TOKEN_BOT_DI_SINI",
@@ -53,18 +74,18 @@ Buka file `config.json` (atau salin dari `config.example.json`):
 }
 ```
 
-**Keterangan Pengaturan:**
+**Keterangan Parameter:**
 - `TOKEN`: Token bot yang diperoleh dari [@BotFather](https://t.me/BotFather) di Telegram.
-- `AUTHORIZED_CHAT_ID`: ID unik akun Telegram Anda untuk membatasi akses hanya kepada Anda (dapat dicek melalui [@userinfobot](https://t.me/userinfobot)).
-- `SSH_HOST`: Gunakan `"localhost"` jika bot dijalankan langsung di dalam STB/Server, atau masukkan IP STB jika dijalankan dari luar.
-- `SSH_PORT`: Port SSH (standar: 22).
-- `SSH_USER` & `SSH_PASSWORD`: Kredensial login SSH ke perangkat Anda.
+- `AUTHORIZED_CHAT_ID`: ID angka Telegram Anda untuk membatasi hak akses agar hanya Anda yang bisa mengontrol bot (cek via [@userinfobot](https://t.me/userinfobot)).
+- `SSH_HOST`: Gunakan `"localhost"` jika bot berjalan langsung di server/STB target, atau isi alamat IP lokal jika bot dijalankan dari perangkat lain.
+- `SSH_PORT`: Port SSH (standar: `22`).
+- `SSH_USER` & `SSH_PASSWORD`: Kredensial login SSH ke Linux Anda.
 
-### 4. Jalankan Bot
+Setelah selesai mengisi, jalankan bot:
 ```bash
 python3 main.py
 ```
-Setelah bot berjalan, buka Telegram dan kirim pesan `/start`.
+Setelah bot berhasil berjalan di terminal, buka Telegram dan kirim pesan `/start`.
 
 ---
 
